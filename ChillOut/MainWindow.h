@@ -35,6 +35,10 @@ class MainWindow : public BaseWindow<MainWindow>
 	void	Draw_GraphicResources();
 	void	Discard_GraphicResources();
 
+	int FrameSwitch = 1;
+
+	HWND hwnd_enterField_search;
+	HFONT hfont_enterField_search;
 
 public:
 	PCWSTR ClassName() const { return L"Mainwindow class"; }

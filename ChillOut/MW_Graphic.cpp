@@ -102,7 +102,20 @@ void MainWindow::Draw_GraphicResources()
         m_pRenderTarget->FillRectangle(D2D1::RectF(0, 0, Client_Rect.right,60), m_pSolBrush_toolbar);
         m_pRenderTarget->FillRoundedRectangle(MW::toolbar_frameSwitch, m_pSolBrush_toolbar_frameSwitch);
         m_pRenderTarget->FillRoundedRectangle(MW::toolbar_searche, m_pSolBrush_toolbar_frameSwitch);
-        m_pRenderTarget->FillRoundedRectangle(MW::toolbar_frameSwitch_caret, m_pSolBrush_toolbar_frameSwitch_caret);
+        switch (FrameSwitch)
+        {
+            case 1:
+                m_pRenderTarget->FillRoundedRectangle(MW::toolbar_frameSwitch_caret_1, m_pSolBrush_toolbar_frameSwitch_caret);
+            break;
+
+            case 2:
+                m_pRenderTarget->FillRoundedRectangle(MW::toolbar_frameSwitch_caret_2, m_pSolBrush_toolbar_frameSwitch_caret);
+            break;
+
+            case 3:
+                m_pRenderTarget->FillRoundedRectangle(MW::toolbar_frameSwitch_caret_3, m_pSolBrush_toolbar_frameSwitch_caret);
+            break;
+        }
         m_pRenderTarget->DrawText(L"Liblary", ARRAYSIZE(L"Liblary"), m_pTextFormat_1,   D2D1::RectF(29, 5, 229, 55), m_pSolBrush_text_full);
         m_pRenderTarget->DrawText(L"Shop", ARRAYSIZE(L"Liblary"), m_pTextFormat_1,      D2D1::RectF(229, 5, 429, 55), m_pSolBrush_text_full);
         m_pRenderTarget->DrawText(L"Community", ARRAYSIZE(L"Liblary"), m_pTextFormat_1, D2D1::RectF(429, 5, 629, 55), m_pSolBrush_text_full);
