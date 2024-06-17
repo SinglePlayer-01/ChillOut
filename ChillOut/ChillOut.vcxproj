@@ -130,11 +130,15 @@
     <ClCompile Include="CORE.cpp" />
     <ClCompile Include="MW_Graphic.cpp" />
     <ClCompile Include="MW_Procedure.cpp" />
+    <ClCompile Include="TB_Graphic.cpp" />
+    <ClCompile Include="TB_Procedure.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseWindow.h" />
     <ClInclude Include="MainWindow.h" />
     <ClInclude Include="MW_GraphicParameters.h" />
+    <ClInclude Include="TB_GraphicParameters.h" />
+    <ClInclude Include="ToolBar.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

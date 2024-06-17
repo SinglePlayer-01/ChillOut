@@ -9,7 +9,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR pCmdLine, int nCmdShow
         return 0;
     }
 
-    ShowWindow(win.Window(), nCmdShow);
+    ShowWindow(win.Window(), SW_MAXIMIZE);
 
     // Run the message loop.
 

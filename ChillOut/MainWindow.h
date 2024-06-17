@@ -8,9 +8,11 @@
 #pragma comment(lib,"dwrite")
 
 #include"BaseWindow.h"
+#include"ToolBar.h"
 
 class MainWindow : public BaseWindow<MainWindow>
 {
+	RECT ClientRect;
 
 	ID2D1Factory* m_pFactory_graphic;
 	ID2D1DCRenderTarget* m_pRenderTarget;
@@ -34,11 +36,14 @@ class MainWindow : public BaseWindow<MainWindow>
 	HRESULT Create_GraphicResources();
 	void	Draw_GraphicResources();
 	void	Discard_GraphicResources();
+	void	Send_GraphicResources();
 
 	int FrameSwitch = 1;
 
 	HWND hwnd_enterField_search;
 	HFONT hfont_enterField_search;
+
+	ToolBar TB;
 
 public:
 	PCWSTR ClassName() const { return L"Mainwindow class"; }

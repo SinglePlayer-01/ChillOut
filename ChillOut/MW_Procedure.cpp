@@ -5,49 +5,32 @@ LRESULT MainWindow::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
 	switch (uMsg)
 	{
 		case WM_CREATE:
+			GetClientRect(m_hwnd, &ClientRect);
 			Create_Factory();
 			Create_GraphicResources();
+			
+			Send_GraphicResources();
 
-			hwnd_enterField_search = CreateWindow(L"EDIT", L"Serch....", WS_CHILD | WS_VISIBLE, 1141, 18, 400, 30, m_hwnd, NULL, NULL, NULL);
+			TB.Create(NULL, WS_CHILDWINDOW | WS_VISIBLE, NULL, 0, 0, ClientRect.right, 60, m_hwnd, NULL);
 
-			hfont_enterField_search = CreateFont(20, 0, 0, 0, FW_BOLD, 0, 0, 0, 0, 0, 0, 0, 0, L"Arial");
+		return 0;
 
-			SendMessage(hwnd_enterField_search, WM_SETFONT, (WPARAM)hfont_enterField_search, TRUE);
-
-			SetFocus(m_hwnd);
-
+		case WM_SIZE:
+			DestroyWindow(TB.Window());
+			Send_GraphicResources();
+			GetClientRect(m_hwnd, &ClientRect);
+			TB.Create(NULL, WS_CHILDWINDOW | WS_VISIBLE, NULL, 0, 0, ClientRect.right, 60, m_hwnd, NULL);
 		return 0;
 
 		case WM_PAINT:
 			Draw_GraphicResources();
 			return 0;
 
-		case WM_COMMAND:
-			switch (LOWORD(wParam))
-			{
-
-			}
-			switch (HIWORD(wParam))
-			{
-			case EN_CHANGE:
-				ShowWindow(HWND(lParam), SW_HIDE);
-				ShowWindow(HWND(lParam), SW_SHOW);
-				SetFocus(HWND(lParam));
-				break;
-			}
-			return 0;
-
 		case WM_DESTROY:
 			Discard_GraphicResources();
+			PostQuitMessage(0);
 		return 0;
 	
-		case WM_CTLCOLORBTN:
-		case WM_CTLCOLOREDIT:
-		case WM_CTLCOLORSTATIC:
-			SetTextColor(HDC(wParam), (COLORREF)RGB(255, 255, 255));
-			SetBkMode(HDC(wParam), TRANSPARENT);
-			return LRESULT(HBRUSH(GetStockObject(NULL_BRUSH)));
-
 	}
 	return DefWindowProc(m_hwnd, uMsg, wParam, lParam);
 }
