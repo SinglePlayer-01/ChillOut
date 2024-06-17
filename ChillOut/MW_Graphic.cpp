@@ -99,7 +99,13 @@ void MainWindow::Draw_GraphicResources()
         m_pRenderTarget->BeginDraw();
 
         m_pRenderTarget->FillRectangle(D2D1::RectF(0, 0, Client_Rect.right, Client_Rect.bottom), m_pGradBrush_wallpaper);
-
+        m_pRenderTarget->FillRectangle(D2D1::RectF(0, 0, Client_Rect.right,60), m_pSolBrush_toolbar);
+        m_pRenderTarget->FillRoundedRectangle(MW::toolbar_frameSwitch, m_pSolBrush_toolbar_frameSwitch);
+        m_pRenderTarget->FillRoundedRectangle(MW::toolbar_searche, m_pSolBrush_toolbar_frameSwitch);
+        m_pRenderTarget->FillRoundedRectangle(MW::toolbar_frameSwitch_caret, m_pSolBrush_toolbar_frameSwitch_caret);
+        m_pRenderTarget->DrawText(L"Liblary", ARRAYSIZE(L"Liblary"), m_pTextFormat_1,   D2D1::RectF(29, 5, 229, 55), m_pSolBrush_text_full);
+        m_pRenderTarget->DrawText(L"Shop", ARRAYSIZE(L"Liblary"), m_pTextFormat_1,      D2D1::RectF(229, 5, 429, 55), m_pSolBrush_text_full);
+        m_pRenderTarget->DrawText(L"Community", ARRAYSIZE(L"Liblary"), m_pTextFormat_1, D2D1::RectF(429, 5, 629, 55), m_pSolBrush_text_full);
         m_pRenderTarget->EndDraw();
 
         EndPaint(m_hwnd, &ps);
