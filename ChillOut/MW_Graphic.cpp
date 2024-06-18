@@ -19,6 +19,7 @@ void MainWindow::Discard_GraphicResources()
     SafeRelease(&m_pSolBrush_toolbar);
     SafeRelease(&m_pSolBrush_toolbar_frameSwitch);
     SafeRelease(&m_pSolBrush_toolbar_frameSwitch_caret);
+    SafeRelease(&m_pSolBrush_toolbar_button_search);
     SafeRelease(&m_pFactory_write);
     SafeRelease(&m_pTextFormat_1);
     SafeRelease(&m_pTextFormat_2);
@@ -62,6 +63,7 @@ HRESULT MainWindow::Create_GraphicResources()
             m_pRenderTarget->CreateSolidColorBrush(MW::color_toolbar, &m_pSolBrush_toolbar);
             m_pRenderTarget->CreateSolidColorBrush(MW::color_toolbar_frameSwitch, &m_pSolBrush_toolbar_frameSwitch);
             m_pRenderTarget->CreateSolidColorBrush(MW::color_toolbar_frameSwitch_caret, &m_pSolBrush_toolbar_frameSwitch_caret);
+            m_pRenderTarget->CreateSolidColorBrush(MW::color_toolbar_button_search, &m_pSolBrush_toolbar_button_search);
             m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::White), &m_pSolBrush_text_full);
             m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Gray), &m_pSolBrush_text_half);
         }
@@ -114,6 +116,7 @@ void MainWindow::Send_GraphicResources()
     TB.m_pSolBrush_toolbar = m_pSolBrush_toolbar;
     TB.m_pSolBrush_toolbar_frameSwitch = m_pSolBrush_toolbar_frameSwitch;
     TB.m_pSolBrush_toolbar_frameSwitch_caret = m_pSolBrush_toolbar_frameSwitch_caret;
+    TB.m_pSolBrush_toolbar_button_search = m_pSolBrush_toolbar_button_search;
 
     TB.m_pSolBrush_text_half = m_pSolBrush_text_half;
     TB.m_pSolBrush_text_full = m_pSolBrush_text_full;

@@ -22,6 +22,7 @@ class MainWindow : public BaseWindow<MainWindow>
 	ID2D1SolidColorBrush* m_pSolBrush_toolbar;
 	ID2D1SolidColorBrush* m_pSolBrush_toolbar_frameSwitch;
 	ID2D1SolidColorBrush* m_pSolBrush_toolbar_frameSwitch_caret;
+	ID2D1SolidColorBrush* m_pSolBrush_toolbar_button_search;
 
 	D2D1_RENDER_TARGET_PROPERTIES props = D2D1::RenderTargetProperties(D2D1_RENDER_TARGET_TYPE_DEFAULT, D2D1::PixelFormat(DXGI_FORMAT_B8G8R8A8_UNORM, D2D1_ALPHA_MODE_IGNORE), 0, 0, D2D1_RENDER_TARGET_USAGE_NONE, D2D1_FEATURE_LEVEL_DEFAULT);
 

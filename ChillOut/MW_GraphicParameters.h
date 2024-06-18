@@ -10,4 +10,5 @@ namespace MW
 	D2D1_COLOR_F color_toolbar = D2D1::ColorF((UINT32)RGB(56, 38, 30), 1.0f);
 	D2D1_COLOR_F color_toolbar_frameSwitch = D2D1::ColorF((UINT32)RGB(101, 66, 51), 1.0f);
 	D2D1_COLOR_F color_toolbar_frameSwitch_caret = D2D1::ColorF((UINT32)RGB(190, 99, 150),1.0f);
+	D2D1_COLOR_F color_toolbar_button_search = D2D1::ColorF((UINT32)RGB(187,221,11), 1.0f);
 }
