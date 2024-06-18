@@ -52,6 +52,23 @@ public:
 	LRESULT HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam);
 };
 
+class Button_Notice : public BaseWindow<Button_Notice>
+{
+
+	bool mouse_hover = false;
+
+	void Draw_GrapgicResources();
+
+public:
+	ID2D1DCRenderTarget* m_pRenderTarget;
+	ID2D1SolidColorBrush* m_pSolBrush_toolbar_button_search;
+	ID2D1SolidColorBrush* m_pSolBrush_text_half;
+
+public:
+	PCWSTR ClassName() const { return L"Button notice class"; }
+	LRESULT HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam);
+};
+
 class ToolBar : public BaseWindow<ToolBar>
 {
 public:
@@ -69,11 +86,11 @@ public:
 		ID2D1SolidColorBrush* m_pSolBrush_text_half;
 
 private:
-		Button_Liblary BT_Liblary;
-		Button_Shop BT_Shop;
-		Button_Community BT_Community;
-		Button_Search    BT_Search;
-
+		Button_Liblary		BT_Liblary;
+		Button_Shop			BT_Shop;
+		Button_Community	BT_Community;
+		Button_Search		BT_Search;
+		Button_Notice		BT_Notice;
 		void	Draw_GraphicResources();
 		void	Discard_GraphicResources();
 		void	Send_GraphicResources();

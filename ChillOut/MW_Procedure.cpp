@@ -11,6 +11,8 @@ LRESULT MainWindow::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
 			
 			Send_GraphicResources();
 
+			log.Create(L"LoginWindow", WS_BORDER | WS_VISIBLE, NULL, 500, 500, 600, 400, NULL, NULL);
+
 			TB.Create(NULL, WS_CHILDWINDOW | WS_VISIBLE, NULL, 0, 0, ClientRect.right, 60, m_hwnd, NULL);
 
 		return 0;

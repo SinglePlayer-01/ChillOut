@@ -122,4 +122,7 @@ void MainWindow::Send_GraphicResources()
     TB.m_pSolBrush_text_full = m_pSolBrush_text_full;
 
     TB.m_pTextFormat_1 = m_pTextFormat_1;
+
+    log.m_pFactory_graphic = m_pFactory_graphic;
+    log.m_pFactory_write = m_pFactory_write;
 }

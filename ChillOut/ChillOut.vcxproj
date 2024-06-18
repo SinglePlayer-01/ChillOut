@@ -128,6 +128,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CORE.cpp" />
+    <ClCompile Include="LW_Graphic.cpp" />
+    <ClCompile Include="LW_Procedure.cpp" />
     <ClCompile Include="MW_Graphic.cpp" />
     <ClCompile Include="MW_Procedure.cpp" />
     <ClCompile Include="TB_Graphic.cpp" />
@@ -135,6 +137,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseWindow.h" />
+    <ClInclude Include="LoginWindow.h" />
+    <ClInclude Include="LW_GraphicParameters.h" />
     <ClInclude Include="MainWindow.h" />
     <ClInclude Include="MW_GraphicParameters.h" />
     <ClInclude Include="TB_GraphicParameters.h" />

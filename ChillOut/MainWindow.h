@@ -9,6 +9,7 @@
 
 #include"BaseWindow.h"
 #include"ToolBar.h"
+#include"LoginWindow.h"
 
 class MainWindow : public BaseWindow<MainWindow>
 {
@@ -45,6 +46,7 @@ class MainWindow : public BaseWindow<MainWindow>
 	HFONT hfont_enterField_search;
 
 	ToolBar TB;
+	LoginWindow log;
 
 public:
 	PCWSTR ClassName() const { return L"Mainwindow class"; }

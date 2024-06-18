@@ -13,39 +13,63 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Исходные файлы\MainWindow">
+      <UniqueIdentifier>{247e84bb-eece-4365-acaf-baa936a33ed0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\MainWindow\ToolBar">
+      <UniqueIdentifier>{5bf29f18-4211-4863-b810-2d8c4614a267}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\MainWindow\MainWindow">
+      <UniqueIdentifier>{171cf793-e459-47a5-bdd8-4a4380dab9fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\LoginWindow">
+      <UniqueIdentifier>{466d54b5-9e7a-47f7-8719-8aacd1dc3694}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CORE.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="MW_Graphic.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="MW_Procedure.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\MainWindow\MainWindow</Filter>
     </ClCompile>
-    <ClCompile Include="TB_Procedure.cpp">
-      <Filter>Исходные файлы</Filter>
+    <ClCompile Include="MW_Graphic.cpp">
+      <Filter>Исходные файлы\MainWindow\MainWindow</Filter>
     </ClCompile>
     <ClCompile Include="TB_Graphic.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\MainWindow\ToolBar</Filter>
+    </ClCompile>
+    <ClCompile Include="TB_Procedure.cpp">
+      <Filter>Исходные файлы\MainWindow\ToolBar</Filter>
+    </ClCompile>
+    <ClCompile Include="LW_Procedure.cpp">
+      <Filter>Исходные файлы\LoginWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="LW_Graphic.cpp">
+      <Filter>Исходные файлы\LoginWindow</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseWindow.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="MainWindow.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="MW_GraphicParameters.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Исходные файлы\MainWindow\MainWindow</Filter>
     </ClInclude>
-    <ClInclude Include="ToolBar.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="MainWindow.h">
+      <Filter>Исходные файлы\MainWindow\MainWindow</Filter>
     </ClInclude>
     <ClInclude Include="TB_GraphicParameters.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Исходные файлы\MainWindow\ToolBar</Filter>
+    </ClInclude>
+    <ClInclude Include="ToolBar.h">
+      <Filter>Исходные файлы\MainWindow\ToolBar</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginWindow.h">
+      <Filter>Исходные файлы\LoginWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="LW_GraphicParameters.h">
+      <Filter>Исходные файлы\LoginWindow</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
