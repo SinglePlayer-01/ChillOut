@@ -68,6 +68,7 @@ HRESULT LoginWindow::Create_GraphicResources()
 
                 m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::White), &m_pSolBrush_text_full);
                 m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Gray), &m_pSolBrush_text_half);
+                m_pRenderTarget->CreateSolidColorBrush(LW::color_button_center, &m_pSolBrush_button_center);
             }
             if (hr == S_OK)
             {
@@ -122,6 +123,17 @@ void LoginWindow::Send_GraphicResources()
     BT_Registration.m_pSolBrush_text_half = m_pSolBrush_text_half;
     BT_Registration.m_pSolBrush_text_full = m_pSolBrush_text_full;
     BT_Registration.m_pTextFormat_2 = m_pTextFormat_2;
+
+    BT_Google.m_pRenderTarget = m_pRenderTarget;
+    BT_Google.m_pSolBrush_text_half = m_pSolBrush_text_half;
+    BT_Google.m_pSolBrush_text_full = m_pSolBrush_text_full;
+
+    BT_Center.m_pRenderTarget = m_pRenderTarget;
+    BT_Center.m_pSolBrush_button_center = m_pSolBrush_button_center;
+
+    BT_Telegram.m_pRenderTarget = m_pRenderTarget;
+    BT_Telegram.m_pSolBrush_text_half = m_pSolBrush_text_half;
+    BT_Telegram.m_pSolBrush_text_full = m_pSolBrush_text_full;
 }
 
 
@@ -144,7 +156,6 @@ void Button_help::Draw_GrapgicResources()
 
     EndPaint(m_hwnd, &ps);
 }
-
 void Button_Registration::Draw_GrapgicResources()
 {
     RECT Client_Rect;
@@ -159,6 +170,67 @@ void Button_Registration::Draw_GrapgicResources()
 
     if (mouse_hover == true) m_pRenderTarget->DrawText(L"Registation", ARRAYSIZE(L"Registation"), m_pTextFormat_2, D2D1::RectF(0, 0, Client_Rect.right, Client_Rect.bottom), m_pSolBrush_text_full);
     else                    m_pRenderTarget->DrawText(L"Registation", ARRAYSIZE(L"Registation"), m_pTextFormat_2, D2D1::RectF(0, 0, Client_Rect.right, Client_Rect.bottom), m_pSolBrush_text_half);
+
+    m_pRenderTarget->EndDraw();
+
+    EndPaint(m_hwnd, &ps);
+}
+
+void Button_Google::Draw_GrapgicResources()
+{
+    RECT Client_Rect;
+    GetClientRect(m_hwnd, &Client_Rect);
+
+    PAINTSTRUCT ps{ };
+
+    HDC hdc = BeginPaint(m_hwnd, &ps);
+
+    m_pRenderTarget->BindDC(hdc, &Client_Rect);
+    m_pRenderTarget->BeginDraw();
+
+    if (mouse_hover == true) m_pRenderTarget->FillEllipse(D2D1::Ellipse(D2D1::Point2F(Client_Rect.right / 2, Client_Rect.bottom / 2),Client_Rect.right / 2, Client_Rect.bottom / 2),m_pSolBrush_text_full);
+    else m_pRenderTarget->FillEllipse(D2D1::Ellipse(D2D1::Point2F(Client_Rect.right / 2, Client_Rect.bottom / 2), Client_Rect.right / 2, Client_Rect.bottom / 2), m_pSolBrush_text_half);
+
+    m_pRenderTarget->EndDraw();
+
+    EndPaint(m_hwnd, &ps);
+}
+void Button_Center::Draw_GrapgicResources()
+{
+    RECT Client_Rect;
+    GetClientRect(m_hwnd, &Client_Rect);
+
+    PAINTSTRUCT ps{ };
+
+    HDC hdc = BeginPaint(m_hwnd, &ps);
+
+    m_pRenderTarget->BindDC(hdc, &Client_Rect);
+    m_pRenderTarget->BeginDraw();
+
+    m_pRenderTarget->DrawEllipse(D2D1::Ellipse(D2D1::Point2F(Client_Rect.right / 2, Client_Rect.bottom / 2), Client_Rect.right / 2 - 1, Client_Rect.bottom / 2 - 1), m_pSolBrush_button_center,1.4);
+    m_pRenderTarget->SetTransform(D2D1::Matrix3x2F::Rotation(-45, D2D1::Point2F((20,25))));
+    m_pRenderTarget->FillRectangle(D2D1::RectF(12, 16, 31, 21), m_pSolBrush_button_center);
+    m_pRenderTarget->FillRectangle(D2D1::RectF(12, 16,17, 35), m_pSolBrush_button_center);
+    m_pRenderTarget->SetTransform(D2D1::Matrix3x2F::Identity());
+
+    m_pRenderTarget->EndDraw();
+
+    EndPaint(m_hwnd, &ps);
+}
+void Button_Telegram::Draw_GrapgicResources()
+{
+    RECT Client_Rect;
+    GetClientRect(m_hwnd, &Client_Rect);
+
+    PAINTSTRUCT ps{ };
+
+    HDC hdc = BeginPaint(m_hwnd, &ps);
+
+    m_pRenderTarget->BindDC(hdc, &Client_Rect);
+    m_pRenderTarget->BeginDraw();
+
+    if (mouse_hover == true) m_pRenderTarget->FillEllipse(D2D1::Ellipse(D2D1::Point2F(Client_Rect.right / 2, Client_Rect.bottom / 2), Client_Rect.right / 2, Client_Rect.bottom / 2), m_pSolBrush_text_full);
+    else m_pRenderTarget->FillEllipse(D2D1::Ellipse(D2D1::Point2F(Client_Rect.right / 2, Client_Rect.bottom / 2), Client_Rect.right / 2, Client_Rect.bottom / 2), m_pSolBrush_text_half);
 
     m_pRenderTarget->EndDraw();
 
